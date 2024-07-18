@@ -10,15 +10,18 @@
 using namespace std;
 
 int main(){
-
-    int x, y, z;
+    // promptiung user for 3 numbers to add 1/2
+    unsigned short num1, num2, num3;
     cout << "Please Enter The Num: \n";
-    cin >> x;
+    cin >> num1;
     cout << "+";
-    cin >> y;
+    cin >> num2;
     cout << "+";
-    cin >> z;
+    cin >> num3;
+
+    // outputting the result of the summation process 3/3
     cout << "=" << x + y + z;
 
     return 0;
 }
+// great work 😎 8/10 ⭐
