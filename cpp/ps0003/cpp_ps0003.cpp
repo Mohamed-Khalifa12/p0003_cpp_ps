@@ -15,10 +15,12 @@
 using namespace std;
 
 int main(){
+    // prompting user for number 2/2
     int x;
     cout << "Please Enter The Number: \n";
     cin >> x;
 
+    // checking if the number is odd or even 3/3
     if(x%2 == 0)
       cout << "Number is even";
     else
@@ -26,3 +28,4 @@ int main(){
 
     return 0;
 }
+// great work 😎 9/10 ⭐
