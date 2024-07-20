@@ -19,20 +19,35 @@ Write a program that takes a number as input and outputs an equivalent ASCII Cha
 using namespace std;
 
 int main() {
-    int asciiValue;
+    // prompting user for number 1/1.5
+    float asciiValue;
 
     cout  <<  "Enter a number from 32 to 126: ";
     cin  >>  asciiValue;
 
-    if(asciiValue < 32 || asciiValue > 126)
+    // checking invalidaty of user's input 3/4
+    if(asciiValue == 0)
     {
       cout  <<  "Invalid character/s or zero value!";
-      return 0;
+      return 1;
     }
 
-    char charValue = char(asciiValue); 
+    if(asciiValue != (int)asciiValue)
+    {
+      cout  <<  "Invalid: a floating point number!";
+      return 2;
+    }
 
+    if(asciiValue < 32 || asciiValue > 126)
+    {
+      cout  <<  "Invalid: number is out of the range!";
+      return 3;
+    }
+
+    // print the character 2/2
+    char charValue = char(asciiValue); 
     cout  <<  "The character for " << asciiValue << " is "<< charValue << "." <<endl;
 
     return 0;
 }
+// good work 👍 7.5/10
