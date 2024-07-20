@@ -23,14 +23,15 @@ using namespace std;
 
 int main()
 {
-    // prompting user for the 2 operands and an operator
-      int operand_1, operand_2, result;
+      // prompting user for the 2 operands and an operator 1.5/2
+      double operand_1, operand_2, result;
       cout << "Enter the two operands: \n";
       cin >> operand_1 >> operand_2;
       char op;
       cout << "Enter the operator + - * / %: \n";
-      cin>> op;
-      // checking if the operator is valid
+      cin >> op;
+      
+      // checking if the operator is valid 2/4
       switch (op)
       {
             case '+':
@@ -48,19 +49,25 @@ int main()
                   else
                   {
                         cout << "Can't divide by 0";
-                        return 0;
+                        return 2;
                   }
-                  break;  
+                  break; // 0.5/1
             case '%':
-                  result = operand_1 % operand_2;
+                  if (operand_1 == (int)operand_1 && operand_2 == (int)operand_2)
+                        result = (int)operand_1 % (int)operand_2;
+                  else
+                  {
+                        cout << "cannot execute modulo operation for floating point numbers.";
+                        return 4;
+                  } // 0/1
                   break;
             default:
                   cout << "Invalid operator";
-                  return 0;
-                  break;
-      }
+                  return 1; // 1/1
+      } // 0.5/1
 
-    // printing the result if all data is valid
+      // printing the result if all data is valid 2/2
       cout << "(" << operand_1 << ") " << op << " (" << operand_2 << ") " << "= " << result;
       return 0;
 }
+// good work 👍 7.5/10
