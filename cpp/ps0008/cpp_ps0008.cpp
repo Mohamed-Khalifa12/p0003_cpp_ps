@@ -1,10 +1,8 @@
 #include <iostream>
-#include <limits>
 #include <cctype>
 #include <string>
 
 using namespace std;
-
 
 bool isInt(string skey);
 void decrypt(string msg, int key);
@@ -14,28 +12,29 @@ enum Case {UPPER = 0, LOWER};
 
 int main(void)
 {
-    // prompting user for valid ciphertext and key
+    // prompting user for valid ciphertext and key 3/3
     string skey, msg;
     int key;
 
     do
     {
         cout << "key: ";
-        cin >> skey;
+        getline(cin, skey); // you accept string (2 successive getline() solve buffer problems)
     } while (!isInt(skey));
     
     key = stoi(skey);
 
+    // Taking message 1/1
     cout << "ciphertext: ";
-    fflush(stdin);
     getline(cin, msg);
 
-    // invoke your decrypt function to return the plaintext
+    // invoke your decrypt function to return the plaintext 1/1
     decrypt(msg, key);
 
     return 0;
 }
 
+// Decrypting process 3/3
 void decrypt(string msg, int key)
 {
     /* implement your function and consider that:
@@ -68,16 +67,16 @@ void decrypt(string msg, int key)
                     msg[i] -= 26;              
             }
         }
-   }
+   } // DRY!
 
    cout << "plaintext: " << msg <<endl; 
 }
 
 bool isInt(string skey){
-    for (int i = 0; i < skey.length(); i++){
+    for (int i = 0, n = skey.length(); i < n; i++){
         if (skey[i] < '0' || skey[i] > '9')
         {
-            if(skey[i] == '-')
+            if((skey[i] == '-' || skey[i] == '+') && i == 0 && n != 1)
                 continue;
             return false;
         }
@@ -89,4 +88,6 @@ bool isInt(string skey){
 bool isAlphapet(char c)
 {
     return (c >= 'a' &&  c <= 'z') || (c >= 'A' &&  c <= 'Z');
-}
+} // no need to reinvent the wheel
+
+// great work 😎 10/10 ⭐
