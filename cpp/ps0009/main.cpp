@@ -15,8 +15,10 @@ int main()
 
     /******************* OPERATION ****************** */
     //arraySwap(arr1, arr2, arr1_size, arr2_size);
-    //elementAdding(arr1, 11);
-
+    //elementAdding(arr1, 11, 3);
+    //elementDeleting(arr1);
+    //elementSwapingDifferentArr(arr1, arr2, 2, 3);
+    //elementSwapingSameArr(arr2, 1, 4);
 
     //Testing after Operation
     testCase(arr1, arr2, "After");

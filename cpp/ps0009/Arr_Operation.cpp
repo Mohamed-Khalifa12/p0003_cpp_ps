@@ -25,6 +25,28 @@ void elementAdding(vector<int>& arr, int value, int index)
     arr[index] = value;
 }
 
+void elementDeleting(vector<int>& arr, int index)
+{
+    vector<int>::iterator it = arr.begin();
+    if(index == -1)
+    {
+        arr.pop_back();
+        return;
+    }
+    
+    arr.erase(it + index);
+}
+
+void elementSwapingDifferentArr(vector<int>& arr1, vector<int>& arr2, int index1, int index2)
+{
+    swapElement(arr1[index1], arr2[index2]);
+}
+
+void elementSwapingSameArr(vector<int>& arr, int index1, int index2)
+{
+    swapElement(arr[index1], arr[index2]);
+}
+
 
 
 
@@ -63,4 +85,11 @@ static void showArr(vector<int>& arr)
 {
     for(int i = 0; i < arr.size(); i++)
         cout << arr[i];
+}
+
+static void swapElement(int &x, int &y)
+{
+    int temp = x;
+    x = y;
+    y = temp;
 }
